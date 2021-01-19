@@ -1,0 +1,72 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{23B04DAE-34E8-4BA9-8009-D3D2D4892BA1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{0DEE1D87-6F93-497F-912B-DFD998D18C7F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - Enterprise Business Rule", "0 - Enterprise Business Rule", "{04301D4C-4BA4-4C6A-9F5B-3DFD20BEA12B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Application Business Rule", "1 - Application Business Rule", "{ADD80688-F0AD-4ED7-8CEE-895E6391FF16}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Interface Adapters", "2 - Interface Adapters", "{72ECB715-359F-4481-A5B5-61AF6149AB68}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Framework and Drivers", "3 - Framework and Drivers", "{B0F1A682-EB88-4A42-B6D4-52D9E3C22A6E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SIGO.Consultorias.Entities", "src\SIGO.Consultorias.Entities\SIGO.Consultorias.Entities.csproj", "{62C3C78E-CA15-4778-9B0C-E6D94B26FEE0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SIGO.Consultorias.Application", "src\SIGO.Consultorias.Application\SIGO.Consultorias.Application.csproj", "{3903B1C9-4501-44C2-87EA-982C52504648}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIGO.Consultorias.Data", "src\SIGO.Consultorias.Data\SIGO.Consultorias.Data.csproj", "{3C7E096A-FA42-420D-81BA-7553307907E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIGO.Consultorias.AttachmentManagement", "src\SIGO.Consultorias.AttachmentManagement\SIGO.Consultorias.AttachmentManagement.csproj", "{A8472A86-439E-4E37-B2B8-415E2ED2AF37}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIGO.Consultorias.API", "src\SIGO.Consultorias.API\SIGO.Consultorias.API.csproj", "{FC22CD7F-1EBA-4C33-880F-DA132D0C0E38}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{62C3C78E-CA15-4778-9B0C-E6D94B26FEE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62C3C78E-CA15-4778-9B0C-E6D94B26FEE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62C3C78E-CA15-4778-9B0C-E6D94B26FEE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62C3C78E-CA15-4778-9B0C-E6D94B26FEE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3903B1C9-4501-44C2-87EA-982C52504648}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3903B1C9-4501-44C2-87EA-982C52504648}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3903B1C9-4501-44C2-87EA-982C52504648}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3903B1C9-4501-44C2-87EA-982C52504648}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C7E096A-FA42-420D-81BA-7553307907E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C7E096A-FA42-420D-81BA-7553307907E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C7E096A-FA42-420D-81BA-7553307907E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C7E096A-FA42-420D-81BA-7553307907E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8472A86-439E-4E37-B2B8-415E2ED2AF37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8472A86-439E-4E37-B2B8-415E2ED2AF37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8472A86-439E-4E37-B2B8-415E2ED2AF37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8472A86-439E-4E37-B2B8-415E2ED2AF37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC22CD7F-1EBA-4C33-880F-DA132D0C0E38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC22CD7F-1EBA-4C33-880F-DA132D0C0E38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC22CD7F-1EBA-4C33-880F-DA132D0C0E38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC22CD7F-1EBA-4C33-880F-DA132D0C0E38}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{04301D4C-4BA4-4C6A-9F5B-3DFD20BEA12B} = {23B04DAE-34E8-4BA9-8009-D3D2D4892BA1}
+		{ADD80688-F0AD-4ED7-8CEE-895E6391FF16} = {23B04DAE-34E8-4BA9-8009-D3D2D4892BA1}
+		{72ECB715-359F-4481-A5B5-61AF6149AB68} = {23B04DAE-34E8-4BA9-8009-D3D2D4892BA1}
+		{B0F1A682-EB88-4A42-B6D4-52D9E3C22A6E} = {23B04DAE-34E8-4BA9-8009-D3D2D4892BA1}
+		{62C3C78E-CA15-4778-9B0C-E6D94B26FEE0} = {04301D4C-4BA4-4C6A-9F5B-3DFD20BEA12B}
+		{3903B1C9-4501-44C2-87EA-982C52504648} = {ADD80688-F0AD-4ED7-8CEE-895E6391FF16}
+		{3C7E096A-FA42-420D-81BA-7553307907E6} = {B0F1A682-EB88-4A42-B6D4-52D9E3C22A6E}
+		{A8472A86-439E-4E37-B2B8-415E2ED2AF37} = {B0F1A682-EB88-4A42-B6D4-52D9E3C22A6E}
+		{FC22CD7F-1EBA-4C33-880F-DA132D0C0E38} = {72ECB715-359F-4481-A5B5-61AF6149AB68}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7243FD5B-CFCA-485E-8866-D09F86C5B57E}
+	EndGlobalSection
+EndGlobal
