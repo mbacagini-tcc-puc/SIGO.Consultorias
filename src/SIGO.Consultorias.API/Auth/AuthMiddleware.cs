@@ -21,11 +21,13 @@ namespace SIGO.Consultorias.API.Auth
                 {
                     var id = Convert.ToInt32(claims.FirstOrDefault(c => c.Type.Contains("userid")).Value);
                     var nome = claims.FirstOrDefault(c => c.Type.Contains("name")).Value;
+                    var perfil = claims.FirstOrDefault(c => c.Type.Contains("role")).Value;
 
                     usuarioAutenticadoService.Usuario = new UsuarioAutenticado
                     {
                         Id = id,
-                        Nome = nome
+                        Nome = nome,
+                        Perfil = perfil
                     };
                 }
 
