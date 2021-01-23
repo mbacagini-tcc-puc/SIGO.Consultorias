@@ -11,6 +11,11 @@ namespace SIGO.Consultorias.Data
 
         }
 
+        public DbSet<Analise> Analises { get; set; }
+        public DbSet<Anexo> anexos { get; set; }
+        public DbSet<Empresa> Empresas { get; set; }
+        public DbSet<EmpresaUsuario> EmpresasUsuarios { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Analise>(new AnaliseMapping().Configure);

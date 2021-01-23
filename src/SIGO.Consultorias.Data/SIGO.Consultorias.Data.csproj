@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\SIGO.Consultorias.Application\SIGO.Consultorias.Application.csproj" />
     <ProjectReference Include="..\SIGO.Consultorias.Entities\SIGO.Consultorias.Entities.csproj" />
   </ItemGroup>
 

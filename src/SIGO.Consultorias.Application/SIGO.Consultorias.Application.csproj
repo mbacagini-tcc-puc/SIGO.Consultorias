@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="UseCases\" />
+    <ProjectReference Include="..\SIGO.Consultorias.Entities\SIGO.Consultorias.Entities.csproj" />
   </ItemGroup>
 
 </Project>

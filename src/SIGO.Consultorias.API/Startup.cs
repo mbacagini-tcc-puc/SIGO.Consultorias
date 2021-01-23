@@ -8,8 +8,11 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 using SIGO.Consultorias.API.Auth;
+using SIGO.Consultorias.Application.Repositories;
 using SIGO.Consultorias.Application.Services;
+using SIGO.Consultorias.Application.UseCases.Analises.EdicaoAnalise;
 using SIGO.Consultorias.Data;
+using SIGO.Consultorias.Data.Repositories;
 using System;
 
 namespace SIGO.Consultorias.API
@@ -33,6 +36,11 @@ namespace SIGO.Consultorias.API
                                                               ));
 
             services.AddScoped<IUsuarioAutenticadoService, UsuarioAutenticadoService>();
+
+            services.AddScoped<IAnaliseRepository, AnaliseRepository>();
+            services.AddScoped<IEmpresaUsuarioRepository, EmpresaUsuarioRepository>();
+
+            services.AddScoped<IEdicaoAnaliseUseCase, EdicaoAnaliseUseCase>();
 
             ConfigureAuth(services);
 
