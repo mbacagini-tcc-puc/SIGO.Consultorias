@@ -14,7 +14,7 @@ namespace SIGO.Consultorias.Data.Repositories
             _context = context;
         }
 
-        public async Task<EmpresaUsuario> ObterPorUsuario(int usuarioId)
+        public async Task<EmpresaUsuario> ObterVinculoEmpresaUsuario(int usuarioId)
         {
             return await _context.EmpresasUsuarios.AsNoTracking().FirstOrDefaultAsync(empresaUsuario => empresaUsuario.UsuarioId == usuarioId);
         }

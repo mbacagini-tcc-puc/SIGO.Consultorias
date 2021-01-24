@@ -33,7 +33,7 @@ namespace SIGO.Consultorias.Tests.Application
                 Nome = NomeUsuarioAutenticado
             });
 
-            _empresaUsuarioRepository.ObterPorUsuario(IdUsuarioAutenticado).Returns(new EmpresaUsuario
+            _empresaUsuarioRepository.ObterVinculoEmpresaUsuario(IdUsuarioAutenticado).Returns(new EmpresaUsuario
             {
                 EmpresaId = EmpresaId
             });

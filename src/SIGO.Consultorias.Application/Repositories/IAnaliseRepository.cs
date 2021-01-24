@@ -11,5 +11,6 @@ namespace SIGO.Consultorias.Application.Repositories
         Task<Analise> ObterAnalisePorId(int id);
         Task Inserir(Analise analise);
         Task Atualizar(Analise analise);
+        Task<IEnumerable<Analise>> ConsultarAnalises(int? empresaId);
     }
 }

@@ -28,7 +28,7 @@ namespace SIGO.Consultorias.Application.UseCases.Analises.EdicaoAnalise
             
             if(analise == null)
             {
-                var empresaUsuario = await _empresaUsuarioRepository.ObterPorUsuario(_usuarioAutenticado.Id);
+                var empresaUsuario = await _empresaUsuarioRepository.ObterVinculoEmpresaUsuario(_usuarioAutenticado.Id);
 
                 analise = new Analise
                 {

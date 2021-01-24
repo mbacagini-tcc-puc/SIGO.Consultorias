@@ -5,6 +5,6 @@ namespace SIGO.Consultorias.Application.Repositories
 {
     public interface IEmpresaUsuarioRepository
     {
-        Task<EmpresaUsuario> ObterPorUsuario(int usuarioId);
+        Task<EmpresaUsuario> ObterVinculoEmpresaUsuario(int usuarioId);
     }
 }

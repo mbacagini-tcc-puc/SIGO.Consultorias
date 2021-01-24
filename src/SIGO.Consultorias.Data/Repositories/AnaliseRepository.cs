@@ -1,6 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SIGO.Consultorias.Application.Repositories;
 using SIGO.Consultorias.Entities;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace SIGO.Consultorias.Data.Repositories
@@ -29,6 +31,17 @@ namespace SIGO.Consultorias.Data.Repositories
         public async Task<Analise> ObterAnalisePorId(int id)
         {
             return await _context.Analises.FirstOrDefaultAsync(analise => analise.Id == id);
+        }
+
+        public async Task<IEnumerable<Analise>> ConsultarAnalises(int? empresaId)
+        {
+            return await _context.Analises
+                                    .AsNoTracking()
+                                    .Include(analise => analise.Empresa)
+                                    .Where(analise => empresaId == null || analise.EmpresaId == empresaId)
+                                    .OrderBy(analise => analise.DataInclusao)
+                                    .ToListAsync();
+
         }
     }
 }
