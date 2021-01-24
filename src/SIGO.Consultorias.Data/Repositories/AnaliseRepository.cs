@@ -33,6 +33,15 @@ namespace SIGO.Consultorias.Data.Repositories
             return await _context.Analises.FirstOrDefaultAsync(analise => analise.Id == id);
         }
 
+        public async Task<Analise> ObterAnaliseDetalhada(int id)
+        {
+            return await _context.Analises
+                                    .AsNoTracking()
+                                    .Include(analise => analise.Empresa)
+                                    .Include(analise => analise.Anexos)
+                                    .FirstOrDefaultAsync(analise => analise.Id == id);
+        }
+
         public async Task<IEnumerable<Analise>> ConsultarAnalises(int? empresaId)
         {
             return await _context.Analises

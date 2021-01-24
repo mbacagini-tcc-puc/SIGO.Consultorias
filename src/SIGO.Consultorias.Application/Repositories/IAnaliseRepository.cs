@@ -9,6 +9,7 @@ namespace SIGO.Consultorias.Application.Repositories
     public interface IAnaliseRepository
     {
         Task<Analise> ObterAnalisePorId(int id);
+        Task<Analise> ObterAnaliseDetalhada(int id);
         Task Inserir(Analise analise);
         Task Atualizar(Analise analise);
         Task<IEnumerable<Analise>> ConsultarAnalises(int? empresaId);
