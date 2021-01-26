@@ -13,6 +13,8 @@ using SIGO.Consultorias.Application.Services;
 using SIGO.Consultorias.Application.UseCases.Analises.ConsultaAnalises;
 using SIGO.Consultorias.Application.UseCases.Analises.DetalhamentoAnalise;
 using SIGO.Consultorias.Application.UseCases.Analises.EdicaoAnalise;
+using SIGO.Consultorias.Application.UseCases.Analises.InclusaoAnexo;
+using SIGO.Consultorias.AttachmentManagement;
 using SIGO.Consultorias.Data;
 using SIGO.Consultorias.Data.Repositories;
 using System;
@@ -38,13 +40,16 @@ namespace SIGO.Consultorias.API
                                                               ));
 
             services.AddScoped<IUsuarioAutenticadoService, UsuarioAutenticadoService>();
+            services.AddScoped<IFileService, FileService>();
 
             services.AddScoped<IAnaliseRepository, AnaliseRepository>();
             services.AddScoped<IEmpresaUsuarioRepository, EmpresaUsuarioRepository>();
+            services.AddScoped<IAnexoRepository, AnexoRepository>();
 
             services.AddScoped<IEdicaoAnaliseUseCase, EdicaoAnaliseUseCase>();
             services.AddScoped<IConsultaAnalisesUseCase, ConsultaAnalisesUseCase>();
             services.AddScoped<IDetalhamentoAnaliseUseCase, DetalhamentoAnaliseUseCase>();
+            services.AddScoped<IInclusaoAnexoUseCase, InclusaoAnexoUseCase>();
 
             ConfigureAuth(services);
 

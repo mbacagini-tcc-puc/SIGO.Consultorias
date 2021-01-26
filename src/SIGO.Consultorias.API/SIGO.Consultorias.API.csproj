@@ -21,6 +21,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SIGO.Consultorias.Application\SIGO.Consultorias.Application.csproj" />
+    <ProjectReference Include="..\SIGO.Consultorias.AttachmentManagement\SIGO.Consultorias.AttachmentManagement.csproj" />
     <ProjectReference Include="..\SIGO.Consultorias.Data\SIGO.Consultorias.Data.csproj" />
   </ItemGroup>
 
