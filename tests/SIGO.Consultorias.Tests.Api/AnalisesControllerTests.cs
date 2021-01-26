@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using NSubstitute;
 using SIGO.Consultorias.API.Controllers;
 using SIGO.Consultorias.Application.UseCases.Analises.ConsultaAnalises;
+using SIGO.Consultorias.Application.UseCases.Analises.DetalhamentoAnalise;
 using SIGO.Consultorias.Application.UseCases.Analises.EdicaoAnalise;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -14,12 +15,14 @@ namespace SIGO.Consultorias.Tests.Api
         private readonly AnalisesController _analisesController;
         private readonly IEdicaoAnaliseUseCase _edicaoAnaliseUseCase;
         private readonly IConsultaAnalisesUseCase _consultaAnalisesUseCase;
+        private readonly IDetalhamentoAnaliseUseCase _detalhamentoAnaliseUseCase;
 
         public AnalisesControllerTests()
         {
             _edicaoAnaliseUseCase = Substitute.For<IEdicaoAnaliseUseCase>();
             _consultaAnalisesUseCase = Substitute.For<IConsultaAnalisesUseCase>();
-            _analisesController = new AnalisesController(_edicaoAnaliseUseCase, _consultaAnalisesUseCase);
+            _detalhamentoAnaliseUseCase = Substitute.For<IDetalhamentoAnaliseUseCase>();
+            _analisesController = new AnalisesController(_edicaoAnaliseUseCase, _consultaAnalisesUseCase, _detalhamentoAnaliseUseCase);
         }
 
         [Fact]
@@ -67,6 +70,35 @@ namespace SIGO.Consultorias.Tests.Api
             // assert
             Assert.IsType<OkObjectResult>(resultado);
             Assert.Equal(analises, ((OkObjectResult)resultado).Value);
+        }
+
+        [Fact]
+        public async Task DeveRetornarNotFoundAoDetalharAnalise()
+        {
+            // arrange
+            _detalhamentoAnaliseUseCase.ObterDetalhesAnalise(1).Returns((DetalhamentoAnaliseOutput)null);
+
+            // act
+            var resultado = await _analisesController.DetalharAnalise(1);
+
+            // assert
+            Assert.IsType<NotFoundResult>(resultado);
+        }
+
+        [Fact]
+        public async Task DeveRetornarDetalhesAnalise()
+        {
+            // arrange
+            var analise = new DetalhamentoAnaliseOutput();
+
+            _detalhamentoAnaliseUseCase.ObterDetalhesAnalise(1).Returns(analise);
+
+            // act
+            var resultado = await _analisesController.DetalharAnalise(1);
+
+            // assert
+            Assert.IsType<OkObjectResult>(resultado);
+            Assert.Equal(analise, ((OkObjectResult)resultado).Value);
         }
     }
 }

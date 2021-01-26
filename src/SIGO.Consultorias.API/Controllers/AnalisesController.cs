@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SIGO.Consultorias.Application.UseCases.Analises.ConsultaAnalises;
+using SIGO.Consultorias.Application.UseCases.Analises.DetalhamentoAnalise;
 using SIGO.Consultorias.Application.UseCases.Analises.EdicaoAnalise;
 using System.Net;
 using System.Threading.Tasks;
@@ -14,11 +15,15 @@ namespace SIGO.Consultorias.API.Controllers
     {
         private readonly IEdicaoAnaliseUseCase _edicaoAnaliseUseCase;
         private readonly IConsultaAnalisesUseCase _consultaAnalisesUseCase;
+        private readonly IDetalhamentoAnaliseUseCase _detalhamentoAnaliseUseCase;
 
-        public AnalisesController(IEdicaoAnaliseUseCase edicaoAnaliseUseCase, IConsultaAnalisesUseCase consultaAnalisesUseCase)
+        public AnalisesController(IEdicaoAnaliseUseCase edicaoAnaliseUseCase,
+                                  IConsultaAnalisesUseCase consultaAnalisesUseCase, 
+                                  IDetalhamentoAnaliseUseCase detalhamentoAnaliseUseCase)
         {
             _edicaoAnaliseUseCase = edicaoAnaliseUseCase;
             _consultaAnalisesUseCase = consultaAnalisesUseCase;
+            _detalhamentoAnaliseUseCase = detalhamentoAnaliseUseCase;
         }
 
         [HttpPost]
@@ -46,6 +51,20 @@ namespace SIGO.Consultorias.API.Controllers
             var analises = await _consultaAnalisesUseCase.ConsultarAnalises();
 
             return Ok(analises);
+        }
+
+        [HttpGet]
+        [Route("{id}")]
+        public async Task<IActionResult> DetalharAnalise(int id)
+        {
+            var analise = await _detalhamentoAnaliseUseCase.ObterDetalhesAnalise(id);
+
+            if(analise == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(analise);
         }
     }
 }

@@ -11,6 +11,7 @@ using SIGO.Consultorias.API.Auth;
 using SIGO.Consultorias.Application.Repositories;
 using SIGO.Consultorias.Application.Services;
 using SIGO.Consultorias.Application.UseCases.Analises.ConsultaAnalises;
+using SIGO.Consultorias.Application.UseCases.Analises.DetalhamentoAnalise;
 using SIGO.Consultorias.Application.UseCases.Analises.EdicaoAnalise;
 using SIGO.Consultorias.Data;
 using SIGO.Consultorias.Data.Repositories;
@@ -43,6 +44,7 @@ namespace SIGO.Consultorias.API
 
             services.AddScoped<IEdicaoAnaliseUseCase, EdicaoAnaliseUseCase>();
             services.AddScoped<IConsultaAnalisesUseCase, ConsultaAnalisesUseCase>();
+            services.AddScoped<IDetalhamentoAnaliseUseCase, DetalhamentoAnaliseUseCase>();
 
             ConfigureAuth(services);
 
