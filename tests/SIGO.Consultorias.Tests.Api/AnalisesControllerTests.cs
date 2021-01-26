@@ -1,7 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using NSubstitute;
 using SIGO.Consultorias.API.Controllers;
+using SIGO.Consultorias.Application.UseCases.Analises.ConsultaAnalises;
 using SIGO.Consultorias.Application.UseCases.Analises.EdicaoAnalise;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -11,11 +13,13 @@ namespace SIGO.Consultorias.Tests.Api
     {
         private readonly AnalisesController _analisesController;
         private readonly IEdicaoAnaliseUseCase _edicaoAnaliseUseCase;
+        private readonly IConsultaAnalisesUseCase _consultaAnalisesUseCase;
 
         public AnalisesControllerTests()
         {
             _edicaoAnaliseUseCase = Substitute.For<IEdicaoAnaliseUseCase>();
-            _analisesController = new AnalisesController(_edicaoAnaliseUseCase);
+            _consultaAnalisesUseCase = Substitute.For<IConsultaAnalisesUseCase>();
+            _analisesController = new AnalisesController(_edicaoAnaliseUseCase, _consultaAnalisesUseCase);
         }
 
         [Fact]
@@ -47,6 +51,22 @@ namespace SIGO.Consultorias.Tests.Api
             // assert
             Assert.IsType<OkResult>(resultado);
             Assert.Equal(2, input.Id);
+        }
+
+        [Fact]
+        public async Task DeveConsultarAnalises()
+        {
+            // arrange
+            var analises = new List<ConsultaAnaliseOutput>();
+
+            _consultaAnalisesUseCase.ConsultarAnalises().Returns(analises);
+
+            // act
+            var resultado = await _analisesController.ConsultarAnalises();
+
+            // assert
+            Assert.IsType<OkObjectResult>(resultado);
+            Assert.Equal(analises, ((OkObjectResult)resultado).Value);
         }
     }
 }

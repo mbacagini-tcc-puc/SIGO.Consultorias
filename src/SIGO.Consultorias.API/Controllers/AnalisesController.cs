@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using SIGO.Consultorias.Application.UseCases.Analises.ConsultaAnalises;
 using SIGO.Consultorias.Application.UseCases.Analises.EdicaoAnalise;
 using System.Net;
 using System.Threading.Tasks;
@@ -12,10 +13,12 @@ namespace SIGO.Consultorias.API.Controllers
     public class AnalisesController : ControllerBase
     {
         private readonly IEdicaoAnaliseUseCase _edicaoAnaliseUseCase;
+        private readonly IConsultaAnalisesUseCase _consultaAnalisesUseCase;
 
-        public AnalisesController(IEdicaoAnaliseUseCase edicaoAnaliseUseCase)
+        public AnalisesController(IEdicaoAnaliseUseCase edicaoAnaliseUseCase, IConsultaAnalisesUseCase consultaAnalisesUseCase)
         {
             _edicaoAnaliseUseCase = edicaoAnaliseUseCase;
+            _consultaAnalisesUseCase = consultaAnalisesUseCase;
         }
 
         [HttpPost]
@@ -35,6 +38,14 @@ namespace SIGO.Consultorias.API.Controllers
             await _edicaoAnaliseUseCase.SalvarAnalise(analiseInput);
 
             return Ok();
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> ConsultarAnalises()
+        {
+            var analises = await _consultaAnalisesUseCase.ConsultarAnalises();
+
+            return Ok(analises);
         }
     }
 }

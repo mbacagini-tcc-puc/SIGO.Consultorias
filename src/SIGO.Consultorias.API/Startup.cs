@@ -10,6 +10,7 @@ using Microsoft.Extensions.Options;
 using SIGO.Consultorias.API.Auth;
 using SIGO.Consultorias.Application.Repositories;
 using SIGO.Consultorias.Application.Services;
+using SIGO.Consultorias.Application.UseCases.Analises.ConsultaAnalises;
 using SIGO.Consultorias.Application.UseCases.Analises.EdicaoAnalise;
 using SIGO.Consultorias.Data;
 using SIGO.Consultorias.Data.Repositories;
@@ -41,6 +42,7 @@ namespace SIGO.Consultorias.API
             services.AddScoped<IEmpresaUsuarioRepository, EmpresaUsuarioRepository>();
 
             services.AddScoped<IEdicaoAnaliseUseCase, EdicaoAnaliseUseCase>();
+            services.AddScoped<IConsultaAnalisesUseCase, ConsultaAnalisesUseCase>();
 
             ConfigureAuth(services);
 
