@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using SIGO.Consultorias.Application.UseCases.Analises.ExclusaoAnexo;
 using SIGO.Consultorias.Application.UseCases.Analises.InclusaoAnexo;
 using System.Threading.Tasks;
 
@@ -9,10 +10,12 @@ namespace SIGO.Consultorias.API.Controllers
     public class AnexosController : ControllerBase
     {
         private readonly IInclusaoAnexoUseCase _inclusaoAnexoUseCase;
+        private readonly IExclusaoAnexoUseCase _exclusaoAnexoUseCase;
 
-        public AnexosController(IInclusaoAnexoUseCase inclusaoAnexoUseCase)
+        public AnexosController(IInclusaoAnexoUseCase inclusaoAnexoUseCase, IExclusaoAnexoUseCase exclusaoAnexoUseCase)
         {
             _inclusaoAnexoUseCase = inclusaoAnexoUseCase;
+            _exclusaoAnexoUseCase = exclusaoAnexoUseCase;
         }
 
         [Route("analises/{analiseId}/anexos")]
@@ -21,6 +24,15 @@ namespace SIGO.Consultorias.API.Controllers
         {
             await _inclusaoAnexoUseCase.IncluirAnexo(analiseId, anexo.FileName, anexo.OpenReadStream());
 
+            return Ok();
+        }
+
+        [Route("analises/{analiseId}/anexos/{anexoId}")]
+        [HttpDelete]
+        public async Task<IActionResult> SalvarAnexo(int anexoId)
+        {
+            await _exclusaoAnexoUseCase.ExcluirAnexo(anexoId);
+            
             return Ok();
         }
     }

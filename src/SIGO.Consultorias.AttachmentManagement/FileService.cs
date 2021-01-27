@@ -1,5 +1,6 @@
 ﻿using Amazon;
 using Amazon.S3;
+using Amazon.S3.Model;
 using Amazon.S3.Transfer;
 using Microsoft.Extensions.Configuration;
 using SIGO.Consultorias.Application.Services;
@@ -10,27 +11,36 @@ namespace SIGO.Consultorias.AttachmentManagement
 {
     public class FileService : IFileService
     {
-        private readonly IConfiguration _configuration;
+        private readonly string _bucketName;
+        private readonly AmazonS3Client _s3Client;
 
         public FileService(IConfiguration configuration)
         {
-            _configuration = configuration;
+            var region = configuration["S3:Region"];
+            var bucketName = configuration["S3:Bucket"];
+            var accessKeyId = configuration["S3:AccessKeyId"];
+            var accessKeySecret = configuration["S3:AccessKeySecret"];
+            
+            _s3Client = new AmazonS3Client(accessKeyId, accessKeySecret, RegionEndpoint.GetBySystemName(region));
+            _bucketName = bucketName;
         }
+
 
         public async Task Upload(Stream file, string fileName)
         {
-            var region = _configuration["S3:Region"];
-            var bucketName = _configuration["S3:Bucket"];
-            var accessKeyId = _configuration["S3:AccessKeyId"];
-            var accessKeySecret = _configuration["S3:AccessKeySecret"];
-
-            using (var s3Client = new AmazonS3Client(accessKeyId, accessKeySecret, RegionEndpoint.GetBySystemName(region)))
+            using (var fileTransferUtility = new TransferUtility(_s3Client))
             {
-                using (var fileTransferUtility = new TransferUtility(s3Client))
-                {
-                    await fileTransferUtility.UploadAsync(file, bucketName, fileName);
-                }
+                await fileTransferUtility.UploadAsync(file, _bucketName, fileName);
             }
+        }
+
+        public async Task Excluir(string fileName)
+        {
+            await _s3Client.DeleteObjectAsync(new DeleteObjectRequest
+            {
+                BucketName = _bucketName,
+                Key = fileName
+            });
         }
     }
 }

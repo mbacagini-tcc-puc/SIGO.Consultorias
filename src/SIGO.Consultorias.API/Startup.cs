@@ -13,6 +13,7 @@ using SIGO.Consultorias.Application.Services;
 using SIGO.Consultorias.Application.UseCases.Analises.ConsultaAnalises;
 using SIGO.Consultorias.Application.UseCases.Analises.DetalhamentoAnalise;
 using SIGO.Consultorias.Application.UseCases.Analises.EdicaoAnalise;
+using SIGO.Consultorias.Application.UseCases.Analises.ExclusaoAnexo;
 using SIGO.Consultorias.Application.UseCases.Analises.InclusaoAnexo;
 using SIGO.Consultorias.AttachmentManagement;
 using SIGO.Consultorias.Data;
@@ -50,6 +51,7 @@ namespace SIGO.Consultorias.API
             services.AddScoped<IConsultaAnalisesUseCase, ConsultaAnalisesUseCase>();
             services.AddScoped<IDetalhamentoAnaliseUseCase, DetalhamentoAnaliseUseCase>();
             services.AddScoped<IInclusaoAnexoUseCase, InclusaoAnexoUseCase>();
+            services.AddScoped<IExclusaoAnexoUseCase, ExclusaoAnexoUseCase>();
 
             ConfigureAuth(services);
 
