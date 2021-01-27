@@ -103,8 +103,8 @@ namespace SIGO.Consultorias.Data.Migrations
                 columns: new[] { "id", "contrato_ativo", "data_alteracao", "data_inclusao", "nome_fantasia", "razao_social" },
                 values: new object[,]
                 {
-                    { 1, true, null, new DateTimeOffset(new DateTime(2021, 1, 22, 23, 4, 26, 253, DateTimeKind.Unspecified).AddTicks(7050), new TimeSpan(0, 0, 0, 0, 0)), "Consultoria 1", "Consultoria 1 LTDA" },
-                    { 2, true, null, new DateTimeOffset(new DateTime(2021, 1, 22, 23, 4, 26, 253, DateTimeKind.Unspecified).AddTicks(7598), new TimeSpan(0, 0, 0, 0, 0)), "Consultoria 2", "Consultoria 2 LTDA" }
+                    { 1, true, null, new DateTimeOffset(new DateTime(2021, 1, 27, 15, 20, 24, 788, DateTimeKind.Unspecified).AddTicks(981), new TimeSpan(0, 0, 0, 0, 0)), "Quality - Consultoria de Processos", "Quality Consultorias LTDA" },
+                    { 2, true, null, new DateTimeOffset(new DateTime(2021, 1, 27, 15, 20, 24, 788, DateTimeKind.Unspecified).AddTicks(1631), new TimeSpan(0, 0, 0, 0, 0)), "People - Consultoria de RH", "People Consultoria de RH Eireli" }
                 });
 
             migrationBuilder.InsertData(
@@ -112,8 +112,8 @@ namespace SIGO.Consultorias.Data.Migrations
                 columns: new[] { "id", "data_alteracao", "data_inclusao", "id_empresa", "id_usuario" },
                 values: new object[,]
                 {
-                    { 1, null, new DateTimeOffset(new DateTime(2021, 1, 22, 23, 4, 26, 259, DateTimeKind.Unspecified).AddTicks(4027), new TimeSpan(0, 0, 0, 0, 0)), 1, 2 },
-                    { 2, null, new DateTimeOffset(new DateTime(2021, 1, 22, 23, 4, 26, 259, DateTimeKind.Unspecified).AddTicks(4146), new TimeSpan(0, 0, 0, 0, 0)), 2, 3 }
+                    { 1, null, new DateTimeOffset(new DateTime(2021, 1, 27, 15, 20, 24, 791, DateTimeKind.Unspecified).AddTicks(6999), new TimeSpan(0, 0, 0, 0, 0)), 1, 2 },
+                    { 2, null, new DateTimeOffset(new DateTime(2021, 1, 27, 15, 20, 24, 791, DateTimeKind.Unspecified).AddTicks(7067), new TimeSpan(0, 0, 0, 0, 0)), 2, 3 }
                 });
 
             migrationBuilder.CreateIndex(

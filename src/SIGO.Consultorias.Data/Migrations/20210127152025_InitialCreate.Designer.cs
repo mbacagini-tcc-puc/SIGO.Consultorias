@@ -10,7 +10,7 @@ using SIGO.Consultorias.Data;
 namespace SIGO.Consultorias.Data.Migrations
 {
     [DbContext(typeof(ConsultoriasContext))]
-    [Migration("20210122230426_InitialCreate")]
+    [Migration("20210127152025_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -157,17 +157,17 @@ namespace SIGO.Consultorias.Data.Migrations
                         {
                             Id = 1,
                             ContratoAtivo = true,
-                            DataInclusao = new DateTimeOffset(new DateTime(2021, 1, 22, 23, 4, 26, 253, DateTimeKind.Unspecified).AddTicks(7050), new TimeSpan(0, 0, 0, 0, 0)),
-                            NomeFantasia = "Consultoria 1",
-                            RazaoSocial = "Consultoria 1 LTDA"
+                            DataInclusao = new DateTimeOffset(new DateTime(2021, 1, 27, 15, 20, 24, 788, DateTimeKind.Unspecified).AddTicks(981), new TimeSpan(0, 0, 0, 0, 0)),
+                            NomeFantasia = "Quality - Consultoria de Processos",
+                            RazaoSocial = "Quality Consultorias LTDA"
                         },
                         new
                         {
                             Id = 2,
                             ContratoAtivo = true,
-                            DataInclusao = new DateTimeOffset(new DateTime(2021, 1, 22, 23, 4, 26, 253, DateTimeKind.Unspecified).AddTicks(7598), new TimeSpan(0, 0, 0, 0, 0)),
-                            NomeFantasia = "Consultoria 2",
-                            RazaoSocial = "Consultoria 2 LTDA"
+                            DataInclusao = new DateTimeOffset(new DateTime(2021, 1, 27, 15, 20, 24, 788, DateTimeKind.Unspecified).AddTicks(1631), new TimeSpan(0, 0, 0, 0, 0)),
+                            NomeFantasia = "People - Consultoria de RH",
+                            RazaoSocial = "People Consultoria de RH Eireli"
                         });
                 });
 
@@ -205,14 +205,14 @@ namespace SIGO.Consultorias.Data.Migrations
                         new
                         {
                             Id = 1,
-                            DataInclusao = new DateTimeOffset(new DateTime(2021, 1, 22, 23, 4, 26, 259, DateTimeKind.Unspecified).AddTicks(4027), new TimeSpan(0, 0, 0, 0, 0)),
+                            DataInclusao = new DateTimeOffset(new DateTime(2021, 1, 27, 15, 20, 24, 791, DateTimeKind.Unspecified).AddTicks(6999), new TimeSpan(0, 0, 0, 0, 0)),
                             EmpresaId = 1,
                             UsuarioId = 2
                         },
                         new
                         {
                             Id = 2,
-                            DataInclusao = new DateTimeOffset(new DateTime(2021, 1, 22, 23, 4, 26, 259, DateTimeKind.Unspecified).AddTicks(4146), new TimeSpan(0, 0, 0, 0, 0)),
+                            DataInclusao = new DateTimeOffset(new DateTime(2021, 1, 27, 15, 20, 24, 791, DateTimeKind.Unspecified).AddTicks(7067), new TimeSpan(0, 0, 0, 0, 0)),
                             EmpresaId = 2,
                             UsuarioId = 3
                         });
