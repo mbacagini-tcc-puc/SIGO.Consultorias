@@ -21,7 +21,7 @@ namespace SIGO.Consultorias.Data.Mapping
                 {
                     Id = 1,
                     RazaoSocial = "Quality Consultorias LTDA",
-                    NomeFantasia = "Quality - Consultoria de Processos",
+                    NomeFantasia = "Quality Consultoria",
                     ContratoAtivo = true,
                     DataInclusao = DateTime.UtcNow
                 },
@@ -30,7 +30,7 @@ namespace SIGO.Consultorias.Data.Mapping
                 {
                     Id = 2,
                     RazaoSocial = "People Consultoria de RH Eireli",
-                    NomeFantasia = "People - Consultoria de RH",
+                    NomeFantasia = "People Consultoria",
                     ContratoAtivo = true,
                     DataInclusao = DateTime.UtcNow
                 }

@@ -10,7 +10,7 @@ using SIGO.Consultorias.Data;
 namespace SIGO.Consultorias.Data.Migrations
 {
     [DbContext(typeof(ConsultoriasContext))]
-    [Migration("20210127152025_InitialCreate")]
+    [Migration("20210127152458_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -157,16 +157,16 @@ namespace SIGO.Consultorias.Data.Migrations
                         {
                             Id = 1,
                             ContratoAtivo = true,
-                            DataInclusao = new DateTimeOffset(new DateTime(2021, 1, 27, 15, 20, 24, 788, DateTimeKind.Unspecified).AddTicks(981), new TimeSpan(0, 0, 0, 0, 0)),
-                            NomeFantasia = "Quality - Consultoria de Processos",
+                            DataInclusao = new DateTimeOffset(new DateTime(2021, 1, 27, 15, 24, 57, 176, DateTimeKind.Unspecified).AddTicks(41), new TimeSpan(0, 0, 0, 0, 0)),
+                            NomeFantasia = "Quality Consultoria",
                             RazaoSocial = "Quality Consultorias LTDA"
                         },
                         new
                         {
                             Id = 2,
                             ContratoAtivo = true,
-                            DataInclusao = new DateTimeOffset(new DateTime(2021, 1, 27, 15, 20, 24, 788, DateTimeKind.Unspecified).AddTicks(1631), new TimeSpan(0, 0, 0, 0, 0)),
-                            NomeFantasia = "People - Consultoria de RH",
+                            DataInclusao = new DateTimeOffset(new DateTime(2021, 1, 27, 15, 24, 57, 176, DateTimeKind.Unspecified).AddTicks(1003), new TimeSpan(0, 0, 0, 0, 0)),
+                            NomeFantasia = "People Consultoria",
                             RazaoSocial = "People Consultoria de RH Eireli"
                         });
                 });
@@ -205,14 +205,14 @@ namespace SIGO.Consultorias.Data.Migrations
                         new
                         {
                             Id = 1,
-                            DataInclusao = new DateTimeOffset(new DateTime(2021, 1, 27, 15, 20, 24, 791, DateTimeKind.Unspecified).AddTicks(6999), new TimeSpan(0, 0, 0, 0, 0)),
+                            DataInclusao = new DateTimeOffset(new DateTime(2021, 1, 27, 15, 24, 57, 183, DateTimeKind.Unspecified).AddTicks(2538), new TimeSpan(0, 0, 0, 0, 0)),
                             EmpresaId = 1,
                             UsuarioId = 2
                         },
                         new
                         {
                             Id = 2,
-                            DataInclusao = new DateTimeOffset(new DateTime(2021, 1, 27, 15, 20, 24, 791, DateTimeKind.Unspecified).AddTicks(7067), new TimeSpan(0, 0, 0, 0, 0)),
+                            DataInclusao = new DateTimeOffset(new DateTime(2021, 1, 27, 15, 24, 57, 183, DateTimeKind.Unspecified).AddTicks(2616), new TimeSpan(0, 0, 0, 0, 0)),
                             EmpresaId = 2,
                             UsuarioId = 3
                         });
