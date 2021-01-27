@@ -4,6 +4,7 @@ using Amazon.S3.Model;
 using Amazon.S3.Transfer;
 using Microsoft.Extensions.Configuration;
 using SIGO.Consultorias.Application.Services;
+using System;
 using System.IO;
 using System.Threading.Tasks;
 
@@ -40,6 +41,19 @@ namespace SIGO.Consultorias.AttachmentManagement
             {
                 BucketName = _bucketName,
                 Key = fileName
+            });
+        }
+
+        public async Task<string> ObterDownloadLink(string fileName)
+        {
+            return await Task.Run(() =>
+            {
+                return _s3Client.GetPreSignedURL(new GetPreSignedUrlRequest
+                {
+                    BucketName = _bucketName,
+                    Key = fileName,
+                    Expires = DateTime.UtcNow.AddMinutes(5)
+                });
             });
         }
     }

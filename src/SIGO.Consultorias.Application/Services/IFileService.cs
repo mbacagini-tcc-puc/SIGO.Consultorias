@@ -7,5 +7,6 @@ namespace SIGO.Consultorias.Application.Services
     {
         Task Upload(Stream file, string fileName);
         Task Excluir(string fileName);
+        Task<string> ObterDownloadLink(string fileName);
     }
 }

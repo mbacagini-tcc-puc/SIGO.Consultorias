@@ -28,7 +28,7 @@ namespace SIGO.Consultorias.Data.Repositories
 
         public async Task<Anexo> ObterPorId(int id)
         {
-            return await _context.Anexos.FirstOrDefaultAsync(anexo => anexo.Id == id);
+            return await _context.Anexos.Include(anexo => anexo.Analise).FirstOrDefaultAsync(anexo => anexo.Id == id);
         }
     }
 }
