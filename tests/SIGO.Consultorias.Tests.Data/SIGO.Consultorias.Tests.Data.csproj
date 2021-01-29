@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\src\SIGO.Consultorias.Data\SIGO.Consultorias.Data.csproj" />
     <ProjectReference Include="..\src\SIGO.Consultorias.Data\SIGO.Consultorias.Data.csproj" />
   </ItemGroup>
 
