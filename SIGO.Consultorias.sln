@@ -25,9 +25,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SIGO.Consultorias.Attachmen
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SIGO.Consultorias.API", "src\SIGO.Consultorias.API\SIGO.Consultorias.API.csproj", "{FC22CD7F-1EBA-4C33-880F-DA132D0C0E38}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIGO.Consultorias.Tests.API", "tests\SIGO.Consultorias.Tests.Api\SIGO.Consultorias.Tests.API.csproj", "{B3A9CCDD-C77D-47A1-9661-1A77693CAB7A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SIGO.Consultorias.Tests.API", "tests\SIGO.Consultorias.Tests.Api\SIGO.Consultorias.Tests.API.csproj", "{B3A9CCDD-C77D-47A1-9661-1A77693CAB7A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIGO.Consultorias.Tests.Application", "tests\SIGO.Consultorias.Tests.Application\SIGO.Consultorias.Tests.Application.csproj", "{A0CDD777-B571-4589-B680-E60178A58ECD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SIGO.Consultorias.Tests.Application", "tests\SIGO.Consultorias.Tests.Application\SIGO.Consultorias.Tests.Application.csproj", "{A0CDD777-B571-4589-B680-E60178A58ECD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIGO.Consultorias.Tests.Data", "SIGO.Consultorias.Tests.Data\SIGO.Consultorias.Tests.Data.csproj", "{0187CE28-2DFC-453C-9109-3B46534B0F3F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{A0CDD777-B571-4589-B680-E60178A58ECD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A0CDD777-B571-4589-B680-E60178A58ECD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A0CDD777-B571-4589-B680-E60178A58ECD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0187CE28-2DFC-453C-9109-3B46534B0F3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0187CE28-2DFC-453C-9109-3B46534B0F3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0187CE28-2DFC-453C-9109-3B46534B0F3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0187CE28-2DFC-453C-9109-3B46534B0F3F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -79,6 +85,7 @@ Global
 		{FC22CD7F-1EBA-4C33-880F-DA132D0C0E38} = {72ECB715-359F-4481-A5B5-61AF6149AB68}
 		{B3A9CCDD-C77D-47A1-9661-1A77693CAB7A} = {0DEE1D87-6F93-497F-912B-DFD998D18C7F}
 		{A0CDD777-B571-4589-B680-E60178A58ECD} = {0DEE1D87-6F93-497F-912B-DFD998D18C7F}
+		{0187CE28-2DFC-453C-9109-3B46534B0F3F} = {0DEE1D87-6F93-497F-912B-DFD998D18C7F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7243FD5B-CFCA-485E-8866-D09F86C5B57E}
